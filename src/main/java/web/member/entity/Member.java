@@ -1,4 +1,4 @@
-package web.member.pojo;
+package web.member.entity;
 
 import java.sql.Timestamp;
 
@@ -24,8 +24,11 @@ public class Member extends Core {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
+	@Column(name = "USERNAME")
 	private String username;
+	@Column(name = "PASSWORD")
 	private String password;
+	@Column(name = "NICKNAME")
 	private String nickname;
 	@Column(insertable = false)
 	private Boolean pass;
@@ -43,6 +46,13 @@ public class Member extends Core {
 		
 	}
 	
+	public Member(String username, String nickname) {
+		this.username = username;
+		this.nickname = nickname;
+	}
+
+
+
 	public Member(Integer id, String username, String password, String nickname, Boolean pass, Integer roleId,
 			String creator, Timestamp createdDate, String updater, Timestamp lastUpdatedDate) {
 		super();

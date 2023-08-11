@@ -4,7 +4,8 @@ import java.util.List;
 
 import org.hibernate.Session;
 
-import static core.util.HibernateUtil.getSessionFactory;
+import core.util.HibernateUtil;
+
 
 public interface CoreDao<P, I> {
 	int insert(P pojo);
@@ -18,6 +19,7 @@ public interface CoreDao<P, I> {
 	List<P> selectAll();
 	
 	default Session getSession() {
-		return getSessionFactory().getCurrentSession();
+//		return getSessionFactory().getCurrentSession();
+		return HibernateUtil.getSessionFactory().openSession();
 	}
 }
