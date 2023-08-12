@@ -2,9 +2,9 @@ package core.dao;
 
 import java.util.List;
 
-import org.hibernate.Session;
+//import org.hibernate.Session;
 
-import static core.util.HibernateUtil.*;
+//import static core.util.HibernateUtil.*;
 
 
 public interface CoreDao<P, I> {
@@ -18,8 +18,8 @@ public interface CoreDao<P, I> {
 
 	List<P> selectAll();
 	
-	default Session getSession() {
-		return getSessionFactory().getCurrentSession();
-//		return HibernateUtil.getSessionFactory().openSession();
-	}
+//	default Session getSession() {
+//		return getSessionFactory().getCurrentSession();
+////		return HibernateUtil.getSessionFactory().openSession();
+//	}
 }

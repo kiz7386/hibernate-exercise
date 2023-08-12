@@ -7,17 +7,17 @@ import javax.sql.DataSource;
 import org.hibernate.SessionFactory;
 import org.hibernate.dialect.MySQLDialect;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.orm.hibernate5.SpringSessionContext;
-import org.springframework.stereotype.Component;
 import org.springframework.transaction.TransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
-@Component("web.*.*.impl")
+@ComponentScan("web.*.*.*")
 @EnableTransactionManagement
 public class TestConfig {
 	

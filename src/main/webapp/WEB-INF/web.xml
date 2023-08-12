@@ -23,4 +23,14 @@
         <param-name>contextConfigLocation</param-name> <!-- java組態才有，名稱一定要這樣 -->
         <param-value>core.config.AppConfig</param-value> <!-- 自己建立的組態類別全名 -->
     </context-param>
+    <filter>
+        <filter-name>HibernateFilter</filter-name>
+        <filter-class>
+            org.springframework.orm.hibernate5.support.OpenSessionInViewFilter
+        </filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>HibernateFilter</filter-name> <!-- 可以刪掉HiberNateFilter.java -->
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
 </web-app>

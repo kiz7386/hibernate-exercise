@@ -17,8 +17,8 @@ import lombok.Setter;
 @Entity
 @Setter
 @Getter
-@NoArgsConstructor
-@AllArgsConstructor
+//@NoArgsConstructor
+//@AllArgsConstructor
 public class Member extends Core {
 	private static final long serialVersionUID = 1062017833925367218L;
 	@Id
@@ -45,28 +45,28 @@ public class Member extends Core {
 	public Member() {
 		
 	}
-	
-	public Member(String username, String nickname) {
-		this.username = username;
-		this.nickname = nickname;
-	}
-
-
-
-	public Member(Integer id, String username, String password, String nickname, Boolean pass, Integer roleId,
-			String creator, Timestamp createdDate, String updater, Timestamp lastUpdatedDate) {
-		super();
-		this.id = id;
-		this.username = username;
-		this.password = password;
-		this.nickname = nickname;
-		this.pass = pass;
-		this.roleId = roleId;
-		this.creator = creator;
-		this.createdDate = createdDate;
-		this.updater = updater;
-		this.lastUpdatedDate = lastUpdatedDate;
-	}
+//	
+//	public Member(String username, String nickname) {
+//		this.username = username;
+//		this.nickname = nickname;
+//	}
+//
+//
+//
+//	public Member(Integer id, String username, String password, String nickname, Boolean pass, Integer roleId,
+//			String creator, Timestamp createdDate, String updater, Timestamp lastUpdatedDate) {
+//		super();
+//		this.id = id;
+//		this.username = username;
+//		this.password = password;
+//		this.nickname = nickname;
+//		this.pass = pass;
+//		this.roleId = roleId;
+//		this.creator = creator;
+//		this.createdDate = createdDate;
+//		this.updater = updater;
+//		this.lastUpdatedDate = lastUpdatedDate;
+//	}
 	public Integer getId() {
 		return id;
 	}
