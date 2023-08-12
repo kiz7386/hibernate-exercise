@@ -8,6 +8,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.PersistenceContext;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
@@ -204,10 +205,14 @@ public class MemberDaoImpl implements MemberDao {
 //		return null;
 	}
 	
+	@PersistenceContext
+	private Session session;
+	
 	@Override
 	public Member selectForLogin(String username, String password) {
 		final String sql = "select * from MEMBER where USERNAME = :username and PASSWORD = :password";
-		return getSession().createNativeQuery(sql, Member.class)
+		return session.createNativeQuery(sql, Member.class)
+//				return getSession().createNativeQuery(sql, Member.class)
 				.setParameter("username", username)
 				.setParameter("password", password)
 				.uniqueResult();
